@@ -3,27 +3,20 @@ import java.util.*;
 public class EPuzzleState extends SearchState {
 	// display the board as an array
 	private int[][] board = new int[3][3];
-	private int g; //local cost
-	private int estRemCost ;//underestimate of the true cost
+
 	// constructor
-	public EPuzzleState(int[][] b, int lc, int eSC) {
+	public EPuzzleState(int[][] b) {
 		this.board = b;
-		this.g = lc;
-		this.estRemCost eSC;
- 	}
+
+	}
 
 	// accessor for puzzle state
 	public int[][] getBoard() {
 		return board;
 	}
-	public int getLocalCost(){
-		return g;
-	}
-	public int getRemCost(){
-		return estRemCost;
-	}
 
 	// goal method
+	//compare current state with the goal
 	public boolean goalP(Search searcher) {
 		PuzzleSearch pS = (PuzzleSearch) searcher;
 		int[][] target = pS.getTarget(); // get target amount
@@ -35,11 +28,11 @@ public class EPuzzleState extends SearchState {
 			}
 
 		}
-		return true; // return if, may have to look up the syntax
-									// for this
+		return true;
 	}
 
 	// same state
+	//check the board and current state and if one tile doesnt match return false
 	public boolean sameState(SearchState s) {
 		EPuzzleState s1 = (EPuzzleState) s;
 		int[][] s2 = s1.getBoard();
@@ -52,25 +45,6 @@ public class EPuzzleState extends SearchState {
 		}
 		return true;
 	}
-	//hamming heurisitic
-	public int Hamming(int[][] b){
-		int lc = 8; //local cost
-		PuzzleSearch pS = (PuzzleSearch) searcher;
-		int tS = pS.getTarget(); //get the target
-		int[][] copyBoard = b;
-		for (int i =0; i < 3; i++){
-			if (copyBoard[i][j] == tS[i][j] && copyBoard[i][j] != 0){
-				lc -= 1; //minus 1 from local cost
-			}else{
-				lc += 1; //add one to local cost
-			}
-		}
-		return lc;
-	}
-	//manhattan heuristic
-	public int Manhattan(){
-		
-	}
 
 	public ArrayList<SearchState> getSuccessors(Search searcher){
 		PuzzleSearch pS = (PuzzleSearch) searcher;
@@ -81,7 +55,7 @@ public class EPuzzleState extends SearchState {
 		int[][] p2 = new int[3][3];
 		int[][] p3 = new int[3][3];
 		int[][] p4 = new int[3][3];
-		//create replicas of the board
+		//create many boards each representing a different move 
 		for(int i = 0; i < 3; i++){
 
 			copyBoard[i] = board[i].clone();
@@ -103,8 +77,7 @@ public class EPuzzleState extends SearchState {
 				if (copyBoard[i][j] == 0){
 					xGap = i;
 					yGap = j;
-					System.out.println("xGap = " + xGap);
-					System.out.println("yGap = "+yGap);
+
 
 				}
 			}
@@ -178,12 +151,12 @@ public class EPuzzleState extends SearchState {
 	public String toString(){
 		String output = new String();
 		for(int i = 0; i <board.length;i++){
-			output = output +"\n"; //print a new line every 3 numbers
+			output = output +"\n";
 			for(int j = 0; j < board.length ; j++){
 
 				output = output+board[i][j];
 			}
 		}
-		return output; //print the board
+		return output;
 	}
 }

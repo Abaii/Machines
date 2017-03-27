@@ -8,7 +8,7 @@ public class RunPuzzleSearch {
 		int[][] gState = {
 			{ 1, 2, 3},
 			{ 4, 5, 6},
-			{ 7, 8, 9}
+			{ 7, 8, 0}
 		};
 		int[][] aP1 =  {
 			{ 1, 0, 3},
@@ -28,15 +28,14 @@ public class RunPuzzleSearch {
 
 		//create a puzzlesearcher //with parameters for the goal state and gap in the board respectively
 		PuzzleSearch searcher = new PuzzleSearch(gState);
-		//figure out how to implement the gap
-		//im not sure how this works at the moment but 0 represents a gap
+
 		//these are the 3 initial states that will be used
 		SearchState P1 = (SearchState) new EPuzzleState(aP1);
 		SearchState P2 = (SearchState) new EPuzzleState(aP2);
 		SearchState P3 = (SearchState) new EPuzzleState(aP3);
 
 		//run the breadth first searches
-		String resd = searcher.runSearch(P1, "breadthFirst");
+		String resd = searcher.runSearch(P3, "breadthFirst");
 		screen.println(resd);//how to run a search with one of the inital states.
 	}
 }
