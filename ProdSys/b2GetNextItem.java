@@ -7,7 +7,7 @@ import java.util.*;
 import java.io.*;
 import sheffield.*;
 
-public class b1GetNextItem extends Prodn {
+public class b2GetNextItem extends Prodn {
 	final static String name = "GET-NEXT-ITEM";
 	final static String[] antes = {"step is get next item",
 	                               "trolley contains ?I space ?S"};
