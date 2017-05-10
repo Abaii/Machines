@@ -1,3 +1,4 @@
+
 /**
 * prod1
 * 2013 version
@@ -11,7 +12,8 @@ public class b1Start extends Prodn {
 	final static String name = "START-BAGGING";
 	final static String[] antes = {"step is start bagging"};
 	final static String[] adds = {"step is get next item",
-							      "current bag no 1 space 100"};
+							      "current bag no 1 space 100",
+										"most efficient bag no 1 space 100"};
 	final static String[] dels = {"step is start bagging"};
 	final static String[] remarks = {"starting to bag"};
 
@@ -25,5 +27,6 @@ public class b1Start extends Prodn {
 
 	public boolean pred(HashMap c){return true;}
 	public HashMap modifyContext(HashMap c){return c;}
+
 
 }

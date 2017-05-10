@@ -49,6 +49,7 @@ public class JugsState extends SearchState{
   * getSuccessors
   * @param searcher - the current search
   */
+<<<<<<< HEAD
  //remove all comments which end in 'd'
   public ArrayList<SearchState> getSuccessors (Search searcher) {
     JugsSearch jsearcher = (JugsSearch) searcher;
@@ -62,6 +63,21 @@ public class JugsState extends SearchState{
 
     if (j1Space > 0) jslis.add(new JugsState(cap1,j2)); //fill jug1 
     if (j2Space > 0) jslis.add(new JugsState(j1,cap2)); //fill jug2 
+=======
+
+  public ArrayList<SearchState> getSuccessors (Search searcher) {
+    JugsSearch jsearcher = (JugsSearch) searcher;
+    int cap1=jsearcher.getCap1();
+    int cap2=jsearcher.getCap2();
+    int j1Space=cap1-j1;
+    int j2Space=cap2-j2;
+
+    ArrayList<JugsState> jslis=new ArrayList<JugsState>(); // the list of jugs states
+    ArrayList<SearchState> slis=new ArrayList<SearchState>();
+
+    if (j1Space > 0) jslis.add(new JugsState(cap1,j2)); //fill jug1
+    if (j2Space > 0) jslis.add(new JugsState(j1,cap2)); //fill jug2
+>>>>>>> 62145eca4e0b88139ae369a83bcbdfb25573182a
     if (j1 != 0) jslis.add(new JugsState(0,j2));         //empty j1
     if (j2 != 0) jslis.add(new JugsState(j1,0));         //empty j2
     if ((j1 != 0) && (j2Space != 0)) {                     //pour from j1 into j2

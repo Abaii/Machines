@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Start
 Goal
 40
@@ -35,3 +36,42 @@ Goal
 Goal
 0
 done
+=======
+Start
+Goal
+40
+A
+Goal
+36
+B
+Goal
+30
+C
+Goal
+50
+D
+Goal
+43
+E
+Goal
+31
+F
+Goal
+18
+G
+Goal
+30
+H
+Goal
+15
+I
+Goal
+20
+J
+Goal
+8
+Goal
+Goal
+0
+done
+>>>>>>> 62145eca4e0b88139ae369a83bcbdfb25573182a
