@@ -26,7 +26,9 @@ public class b2StartNewBag extends Prodn {
 	public String[] getRemarks(){return remarks;}
 
 
-	public boolean pred(HashMap c){return true;}
+	public boolean pred(HashMap c){
+		return true; 
+	}
 
 	public HashMap modifyContext(HashMap c){
 		Integer bagno = Integer.valueOf((String) c.get("?N"));

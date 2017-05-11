@@ -19,7 +19,10 @@ public class TestPS
       ArrayList<Prodn> bagger2 = new ArrayList<Prodn>(); //make the bagger1 rules
       bagger2.add(new b2Start());
       bagger2.add(new b2GetNextItem());
+      bagger2.add(new b2ChangeMostEfficient());
+      bagger2.add(new b2GetNextItem());
       bagger2.add(new b2BagInCurrent());
+
       bagger2.add(new b2StartNewBag());
 
 

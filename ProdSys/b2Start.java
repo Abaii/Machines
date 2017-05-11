@@ -11,8 +11,7 @@ public class b2Start extends Prodn {
 	final static String name = "START-BAGGING";
 	final static String[] antes = {"step is start bagging"};
 	final static String[] adds = {"step is get next item",
-							      "current bag no 1 space 100",
-									"most efficient bag no 1 space 100"};
+							      "current bag no 1 space 100"};
 	final static String[] dels = {"step is start bagging"};
 	final static String[] remarks = {"starting to bag"};
 
