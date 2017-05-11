@@ -19,8 +19,8 @@
  * @author pdg
  * @version 1.00 2017/3/22
  */
-
-
+ 
+ 
 import sheffield.*;
 import java.util.*;
 
@@ -31,14 +31,14 @@ public class TrolleyGen {
  String stString = "trolley contains item";
  String finString = " space ";
  String[] contents; //build up answer in here
-
-
+ 
+ 
 public TrolleyGen(int seed, int items ) { //constructor given seed, number of items
     gen=new Random(seed);
-    nItems= items;
+    nItems= items; 
     contents = new String[nItems];
     }
-
+    
 public String[] fillTrolley ()  { //generate a trolley
  screen.println(nItems);
  for (int i=1;i<=nItems;i++ ){
@@ -48,3 +48,4 @@ public String[] fillTrolley ()  { //generate a trolley
  return contents;
 }
 }
+ 	 
