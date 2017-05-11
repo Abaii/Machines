@@ -10,11 +10,15 @@ import sheffield.*;
 public class b2GetNextItem extends Prodn {
 	final static String name = "GET-NEXT-ITEM";
 	final static String[] antes = {"step is get next item",
-	                               "trolley contains ?I space ?S"};
-	final static String[] adds = {"step is bag item",
-							      "item to bag ?I space ?S"};
+	                               "trolley contains ?I space ?S",
+
+															 "most efficient bag no ?EN space ?ES"};
+	final static String[] adds = {"step is change most efficient bag",
+							      "item to bag ?I space ?S",
+										"most efficient bag no 0 space 101"};
 	final static String[] dels = {"step is get next item",
-	                              "trolley contains ?I space ?S"};
+	                              "trolley contains ?I space ?S",
+															"most efficient bag no ?EN space ?ES"};
 	final static String[] remarks = {"bagging ?I"};
 
 

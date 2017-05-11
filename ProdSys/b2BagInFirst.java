@@ -5,24 +5,24 @@ import sheffield.*;
 
 
 
-public class b2BagItem extends Prodn{
-  final static String name = "BAG-ITEM";
+public class b2BagInFirst extends Prodn{
+  final static String name = "BAG-ITEM-FIRST";
   final static String[] antes = {"step is change most efficient bag",
                                  "item to bag ?I space ?S",
                                 "current bag no ?N space ?BS",
-                                "most efficient bag no ?EN space ?ES",
+                                "most efficient bag no 1 space ?ES",
                                 "bag no 1 space ?BBS"};
   final static String[] adds = {"step is get next item",
-                    "bag no ?EN contains ?I",
-                    "bag no ?EN space ?RS",
-                    "current bag no 1 space ?BBS"
+                    "bag no 1 contains ?I",
+                    "bag no 1 space ?RS",
+                    "current bag no 1 space ?RS"
                     };
   final static String[] dels = {"step is change most efficient bag",
                                 "item to bag ?I space ?S",
-                                "bag no ?EN space ?ES",
+                                "bag no 1 space ?ES",
                             "current bag no ?N space ?BS"
                             };
-  final static String[] remarks = {"?I in bag no ?EN"};
+  final static String[] remarks = {"?I in bag no 1"};
 
 
   public String getName(){return name;}
@@ -33,8 +33,7 @@ public class b2BagItem extends Prodn{
 
 
   public boolean pred(HashMap c){
-    Integer bagno = Integer.valueOf((String) c.get("?EN"));
-    return (Integer.valueOf(bagno) != 0);
+    return true;
 
   }
 

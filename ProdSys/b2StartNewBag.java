@@ -11,10 +11,10 @@ import sheffield.*;
 
 public class b2StartNewBag extends Prodn {
 	final static String name = "START-NEW-BAG";
-	final static String[] antes = {"step is bag item",
+	final static String[] antes = {"step is change most efficient bag",
 	                               "current bag no ?N space ?BS"};
 	final static String[] adds = {"current bag no ?NB space 100",
-																"bag no ?N space ?BS"};
+																"bag no ?NB space 100"};
 	final static String[] dels = {"current bag no ?N space ?BS"};
 	final static String[] remarks = {"Starting bag ?NB"};
 
@@ -27,7 +27,7 @@ public class b2StartNewBag extends Prodn {
 
 
 	public boolean pred(HashMap c){
-		return true; 
+		return true;
 	}
 
 	public HashMap modifyContext(HashMap c){

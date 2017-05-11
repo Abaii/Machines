@@ -5,15 +5,13 @@ import sheffield.*;
 
 
 
-public class b2GetNextBag{
+public class b2GetNextBag extends Prodn{
   final static String name = "GET-NEXT-BAG";
-  final static String[] antes = {"step is get the next bag",
-                                "most efficient bag no ?EN space ?ES"};
-  final static String[] adds = {"step is get next bag",
-                                "Item ?I has space ?S"
-                                "most efficient bag is no ?EN space ?RS "};
-  final static String[] dels = {"step is get next bag",
-                                "Item ?I has space ?S"};
+  final static String[] antes = {"step is change most efficient bag",
+                                "current bag no ?N space ?BS",
+                                "bag no ?NN space ?BSS"};
+  final static String[] adds = {"current bag no ?NN space ?BSS"};
+  final static String[] dels = {"current bag no ?N space ?BS"};
   final static String[] remarks = {"changing most efficient bag no"};
 
 
@@ -25,13 +23,12 @@ public class b2GetNextBag{
 
 
   public boolean pred(HashMap c){
-    
+    Integer bagno = Integer.valueOf((String) c.get("?N"));
+    Integer newbagno = Integer.valueOf((String) c.get("?NN"));
+    return (bagno == newbagno -1);
 
   }
-  }
   public HashMap modifyContext(HashMap c){
-    //increase the most efficient bag number by 1
-    Integer bagno = Integer.valueOf((String) c.get("?EN"));
-		c.put("?EN", String.valueOf(bagno.intValue()+1));
-      return c;}
+    return c;
+  }
 }

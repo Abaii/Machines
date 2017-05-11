@@ -9,11 +9,12 @@ import sheffield.*;
 
 public class b2ChangeMostEfficient extends Prodn {
 	final static String name = "CHANGE-MOST-EFFICIENT";
-	final static String[] antes = {"step is get change most efficient bag",
-	                               "current bag no ?N space ?S"};
-	final static String[] adds = {"step is check bag",
-							      						"most efficient bag no ?EN space ?ES"};
-	final static String[] dels = {"step is check bag"};
+	final static String[] antes = {"step is change most efficient bag",
+	                               "current bag no ?N space ?BS",
+															 	"item to bag ?I space ?S",
+																"most efficient bag no ?EN space ?ES"};
+	final static String[] adds = {"most efficient bag no ?N space ?BS"};
+	final static String[] dels = {"most efficient bag no ?EN space ?ES"};
 	final static String[] remarks = {"changing most efficient bag "};
 
 
@@ -25,13 +26,13 @@ public class b2ChangeMostEfficient extends Prodn {
 
 
 	public boolean pred(HashMap c){
-		return true;
+		Integer spaceLeft = Integer.valueOf((String) c.get("?BS"));
+	 Integer spaceNeeded = Integer.valueOf((String) c.get("?S"));
+	 Integer efficientSpace = Integer.valueOf((String) c.get("?ES"));
+	 return (spaceLeft.intValue()>=
+					 spaceNeeded.intValue() && spaceLeft.intValue() < efficientSpace.intValue());
 	}
 	public HashMap modifyContext(HashMap c){
-		Integer bagno = Integer.valueOf((String) c.get("?N"));
-		Integer space = Integer.valueOf((String) c.get("?S"));
-		c.put("?EN", String.valueOf(bagno.intValue()));
-		c.put("?ES", String.valueOf(space.intValue()));
 		return c;}
 
 }
